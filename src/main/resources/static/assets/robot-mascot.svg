@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <!-- Background glow & gradients -->
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#EBF1FD"/>
+      <stop offset="100%" stop-color="#D1DCF7"/>
+    </linearGradient>
+    <linearGradient id="visorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06103C"/>
+      <stop offset="100%" stop-color="#0F2468"/>
+    </linearGradient>
+    <linearGradient id="eyeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#00A3FF"/>
+    </linearGradient>
+    <linearGradient id="accentBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3A7BFF"/>
+      <stop offset="100%" stop-color="#1E4ED8"/>
+    </linearGradient>
+    <linearGradient id="armGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D5E0FA"/>
+    </linearGradient>
+    <filter id="eyeGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#050E3A" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <!-- Antenna -->
+    <path d="M100 44 L100 30" stroke="#8EA5DE" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="100" cy="27" r="6" fill="#3A7BFF"/>
+    <circle cx="100" cy="27" r="3" fill="#00F0FF" filter="url(#eyeGlow)"/>
+
+    <!-- Ear pods -->
+    <rect x="42" y="66" width="10" height="24" rx="5" fill="#2F6BFF"/>
+    <rect x="148" y="66" width="10" height="24" rx="5" fill="#2F6BFF"/>
+
+    <!-- Head -->
+    <rect x="50" y="44" width="100" height="74" rx="36" fill="url(#bodyGrad)" stroke="#B9CEFB" stroke-width="2"/>
+
+    <!-- Visor -->
+    <rect x="62" y="58" width="76" height="46" rx="20" fill="url(#visorGrad)"/>
+
+    <!-- Glowing Eyes -->
+    <ellipse cx="82" cy="80" rx="9" ry="12" fill="url(#eyeGrad)" filter="url(#eyeGlow)"/>
+    <ellipse cx="118" cy="80" rx="9" ry="12" fill="url(#eyeGrad)" filter="url(#eyeGlow)"/>
+    <circle cx="85" cy="76" r="3" fill="#FFFFFF"/>
+    <circle cx="121" cy="76" r="3" fill="#FFFFFF"/>
+
+    <!-- Smile arc on visor -->
+    <path d="M93 93 Q100 97 107 93" stroke="#00E5FF" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8"/>
+
+    <!-- Neck connector -->
+    <rect x="88" y="117" width="24" height="8" rx="4" fill="#8EA5DE"/>
+
+    <!-- Body -->
+    <path d="M64 125 Q100 120 136 125 Q144 140 142 172 Q100 178 58 172 Q56 140 64 125 Z" fill="url(#bodyGrad)" stroke="#B9CEFB" stroke-width="2"/>
+
+    <!-- Chest Emblem -->
+    <rect x="85" y="134" width="30" height="20" rx="8" fill="#E3ECFD"/>
+    <circle cx="100" cy="144" r="5" fill="#FF7A00"/>
+    <circle cx="100" cy="144" r="2.5" fill="#FFF"/>
+
+    <!-- Left Arm (Resting) -->
+    <path d="M58 128 C45 135 44 154 52 165 C55 169 60 168 60 162 C55 153 54 142 63 135 Z" fill="url(#armGrad)" stroke="#B9CEFB" stroke-width="1.5"/>
+
+    <!-- Right Arm (Waving) -->
+    <!-- Upper arm going up -->
+    <path d="M138 128 C150 122 160 108 164 96 C168 85 156 82 152 92 C148 102 142 114 134 124 Z" fill="url(#armGrad)" stroke="#B9CEFB" stroke-width="1.5"/>
+    <!-- Hand waving -->
+    <circle cx="162" cy="88" r="9" fill="url(#bodyGrad)" stroke="#B9CEFB" stroke-width="1.5"/>
+    <path d="M168 84 Q174 80 171 75 Q166 76 164 81" fill="#D5E0FA"/>
+    <path d="M160 80 Q163 72 157 71 Q155 77 157 82" fill="#D5E0FA"/>
+  </g>
+</svg>
+

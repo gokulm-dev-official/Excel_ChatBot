@@ -1,0 +1,292 @@
+/* ========================================
+   EXCEL ENGINEERING COLLEGE - BASE STYLES
+   ======================================== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--navbar-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--text);
+  background-color: var(--bg);
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--orange-400);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+h1 { font-size: var(--fs-h1); font-weight: 800; }
+h2 { font-size: var(--fs-h2); font-weight: 800; }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); font-weight: 600; }
+
+p {
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+
+.section {
+  padding: var(--section-padding) 0;
+}
+
+.section--surface {
+  background-color: var(--surface);
+}
+
+.section--bg {
+  background-color: var(--bg);
+}
+
+/* Eyebrow Label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--orange-600);
+  margin-bottom: 16px;
+}
+
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: var(--orange-500);
+  border-radius: var(--radius-pill);
+}
+
+.dark-section .eyebrow {
+  color: var(--orange-400);
+}
+
+.dark-section .eyebrow::before {
+  background: var(--orange-400);
+}
+
+.section-heading {
+  margin-bottom: 48px;
+}
+
+.section-heading h2 {
+  margin-top: 8px;
+}
+
+.section-heading p {
+  margin-top: 14px;
+  max-width: 620px;
+}
+
+.section-heading--center {
+  text-align: center;
+}
+
+.section-heading--center p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 32px;
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  transition: all var(--duration-normal) var(--ease);
+  position: relative;
+  white-space: nowrap;
+  min-height: 50px;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform var(--duration-normal) var(--ease);
+  flex-shrink: 0;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, var(--orange-500) 0%, var(--orange-400) 100%);
+  color: white;
+  box-shadow: var(--shadow-orange);
+  border: none;
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-orange-hover);
+  filter: brightness(1.05);
+}
+
+.btn--primary:hover svg {
+  transform: translateX(4px);
+}
+
+.btn--primary:active {
+  transform: scale(0.97);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: white;
+  border: 1.5px solid rgba(255,255,255,.6);
+}
+
+.btn--secondary:hover {
+  background: rgba(255,255,255,.14);
+  border-color: white;
+  transform: translateY(-2px);
+}
+
+.btn--secondary:active {
+  transform: scale(0.97);
+}
+
+.btn--secondary-navy {
+  background: transparent;
+  color: var(--navy-700);
+  border: 1.5px solid var(--navy-700);
+}
+
+.btn--secondary-navy:hover {
+  background: var(--navy-100);
+  transform: translateY(-2px);
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-normal) var(--ease);
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--navy-100);
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+/* Icon Tile */
+.icon-tile {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  background: var(--navy-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-normal) var(--ease);
+  flex-shrink: 0;
+}
+
+.icon-tile svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--navy-700);
+  stroke-width: 1.75;
+  transition: all var(--duration-normal) var(--ease);
+}
+
+.card:hover .icon-tile {
+  background: linear-gradient(135deg, var(--navy-950) 0%, var(--navy-700) 100%);
+}
+
+.card:hover .icon-tile svg {
+  stroke: white;
+}
+
+/* Skeleton loader */
+.skeleton {
+  background: linear-gradient(90deg, var(--border-light) 25%, var(--navy-50) 50%, var(--border-light) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite ease-in-out;
+  border-radius: var(--radius-xs);
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel Engineering College (Autonomous) | AI Campus Assistant</title>
+  <meta name="description" content="Official website and AI chatbot for Excel Engineering College (Autonomous). Discover courses, admissions, departments, facilities and official contacts.">
+  <link rel="icon" type="image/jpeg" href="assets/excel-logo.jpg">
+
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/splash.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- ==================== SCREEN 1: ANIMATED SPLASH SCREEN ==================== -->
+  <aside class="splash" id="splashScreen" aria-label="Welcome screen">
+    <div class="splash__dots"></div>
+
+    <div class="splash__top">
+      <div class="splash__logo-wrap">
+        <div class="splash__logo-badge">
+          <img src="assets/excel-logo-light.png" alt="Excel Engineering College Crest Logo" fetchpriority="high">
+        </div>
+      </div>
+      <p class="splash__tagline">Empowering Innovation. Inspiring Excellence.</p>
+    </div>
+
+    <div class="splash__bottom">
+      <div class="splash__campus-backdrop">
+        <img src="assets/college-campus.jpg" alt="Excel Campus Main Building at Night">
+        <div class="splash__campus-overlay"></div>
+      </div>
+
+      <!-- Glowing orange curved light trail -->
+      <svg class="splash__swoosh" viewBox="0 0 600 90" fill="none" preserveAspectRatio="none">
+        <path d="M-20,75 C180,95 240,15 620,30" stroke="#FF7A00" stroke-width="8" stroke-linecap="round" opacity="0.9" filter="drop-shadow(0 0 10px #FF7A00)"/>
+        <path d="M-20,75 C180,95 240,15 620,30" stroke="#FFF" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+      </svg>
+
+      <div class="splash__loader-wrap">
+        <div class="splash__spinner"></div>
+        <div class="splash__loader-text">Loading your academic journey...</div>
+      </div>
+    </div>
+
+    <button class="splash__skip" id="skipSplashBtn" type="button">Skip &rarr;</button>
+  </aside>
+
+  <!-- ==================== SCREEN 2: COLLEGE HOMEPAGE ==================== -->
+
+  <!-- Navigation Bar: Floating Rounded White Capsule -->
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="#hero" class="navbar__brand">
+        <img src="assets/excel-logo.jpg" alt="Excel Engineering College Logo">
+      </a>
+
+      <nav class="navbar__links" aria-label="Main Navigation">
+        <a href="#hero" class="navbar__link active">Home</a>
+        <a href="#about" class="navbar__link">About</a>
+        <a href="#explore" class="navbar__link">Courses</a>
+        <a href="#explore" class="navbar__link">Departments</a>
+        <a href="#explore" class="navbar__link">Facilities</a>
+        <a href="#contact" class="navbar__link">Contact</a>
+      </nav>
+
+      <a href="chatbot.html" class="navbar__cta">
+        <img src="assets/robot-mascot.svg" alt="Robot Icon">
+        <span>AI Assistant</span>
+      </a>
+
+      <button class="navbar__toggle" aria-label="Toggle navigation menu" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero__container">
+        <!-- Left Hero Card -->
+        <div class="hero__card">
+          <div class="hero__swoosh"></div>
+
+          <h1 class="hero__title">
+            Discover Your Future at<br>Excel Engineering College
+          </h1>
+
+          <p class="hero__desc">
+            Explore academic programmes, admissions, departments and campus facilities with our intelligent college assistant.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#explore" class="btn--hero-orange">
+              <span>Explore College</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="chatbot.html" class="btn--hero-dark">
+              <img src="assets/robot-mascot.svg" alt="Assistant">
+              <span>Ask AI Assistant</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Campus Photo Visual -->
+        <div class="hero__visual">
+          <img src="assets/college-campus.jpg" alt="Excel Engineering College Autonomous Main Building">
+        </div>
+
+        <!-- Scroll Down Mouse -->
+        <div class="hero__scroll">
+          <div class="hero__scroll-mouse">
+            <div class="hero__scroll-dot"></div>
+          </div>
+          <span>Scroll Down</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Welcome Strip -->
+    <section class="welcome-strip" id="about">
+      <div class="welcome-strip__inner">
+        <div class="welcome-strip__thumb">
+          <img src="assets/college-campus.jpg" alt="Campus Building">
+        </div>
+        <div>
+          <div class="welcome-strip__heading">Welcome to Excel Engineering College</div>
+          <p class="welcome-strip__text">
+            Excel Engineering College (Autonomous) is committed to providing quality education, fostering innovation and nurturing talent for a brighter future. Approved by AICTE and affiliated to Anna University, accredited with NAAC 'A+' grade.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explore Our College Section -->
+    <section class="explore-section" id="explore">
+      <div class="explore-section__title-wrap">
+        <h2 class="explore-section__title">Explore Our College</h2>
+      </div>
+
+      <div class="explore-cards">
+        <!-- Card 1: Courses -->
+        <a href="chatbot.html?category=Courses" class="explore-card explore-card--courses">
+          <div class="explore-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 6 3 6 3s3 0 6-3v-5"/></svg>
+          </div>
+          <h3 class="explore-card__title">Courses</h3>
+          <p class="explore-card__desc">Explore academic programmes.</p>
+          <div class="explore-card__arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Card 2: Admissions -->
+        <a href="chatbot.html?category=Admissions" class="explore-card explore-card--admissions">
+          <div class="explore-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+          </div>
+          <h3 class="explore-card__title">Admissions</h3>
+          <p class="explore-card__desc">Find admission procedures.</p>
+          <div class="explore-card__arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Card 3: Departments -->
+        <a href="chatbot.html?category=Departments" class="explore-card explore-card--departments">
+          <div class="explore-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+          </div>
+          <h3 class="explore-card__title">Departments</h3>
+          <p class="explore-card__desc">Discover departments.</p>
+          <div class="explore-card__arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Card 4: Facilities -->
+        <a href="chatbot.html?category=Facilities" class="explore-card explore-card--facilities">
+          <div class="explore-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg>
+          </div>
+          <h3 class="explore-card__title">Facilities</h3>
+          <p class="explore-card__desc">Explore campus facilities.</p>
+          <div class="explore-card__arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- Card 5: Contact Information -->
+        <a href="chatbot.html?category=Contact%20Information" class="explore-card explore-card--contact" id="contact">
+          <div class="explore-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3 class="explore-card__title">Contact Information</h3>
+          <p class="explore-card__desc">Get in touch with us.</p>
+          <div class="explore-card__arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- AI Promo Banner -->
+    <section class="ai-promo-card">
+      <div class="ai-promo-card__inner">
+        <div class="ai-promo-card__mascot">
+          <img src="assets/robot-mascot.svg" alt="Excel AI Assistant Mascot">
+        </div>
+
+        <div class="ai-promo-card__content">
+          <h2>Have Questions About Excel College?</h2>
+          <p>
+            Our intelligent college assistant is here to help you find information about courses, admissions, departments, facilities and contact details.
+          </p>
+          <a href="chatbot.html" class="ai-promo-card__btn">
+            <span>Start Conversation</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="ai-promo-card__watermark">
+          <svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 6 3 6 3s3 0 6-3v-5"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-ref">
+    <div class="footer-ref__inner">
+      <div class="footer-ref__top">
+        <div class="footer-ref__brand">
+          <img src="assets/excel-logo.jpg" alt="Excel Engineering College">
+        </div>
+
+        <nav class="footer-ref__nav">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#explore">Courses</a>
+          <a href="#explore">Departments</a>
+          <a href="#explore">Facilities</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="footer-ref__social">
+          <span>Follow Us:</span>
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">t</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+
+      <div class="footer-ref__bottom">
+        <div>&copy; 2026 Excel Engineering College. All Rights Reserved.</div>
+        <div class="footer-ref__tagline">Together Towards Excellence...</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Chatbot Launcher -->
+  <a href="chatbot.html" class="floating-launcher" title="Ask Excel AI Assistant" aria-label="Open AI Assistant">
+    <img src="assets/robot-mascot.svg" alt="AI Mascot">
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/api.js"></script>
+  <script src="js/splash.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

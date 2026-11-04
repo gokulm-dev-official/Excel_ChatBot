@@ -1,0 +1,77 @@
+/* ========================================
+   EXCEL ENGINEERING COLLEGE - DESIGN TOKENS
+   Reference-Level UI Edition
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&display=swap');
+
+:root {
+  /* Core brand palette */
+  --navy-950: #050E3A;   /* splash background + deepest surfaces */
+  --navy-900: #0A1C66;   /* banner card background, dark hero elements */
+  --navy-800: #142880;
+  --navy-700: #292F91;   /* primary institutional navy */
+  --navy-600: #2F6BFF;   /* vibrant accent blue */
+  --navy-500: #4B82FF;
+  --navy-100: #E9EEFF;   /* soft lavender / periwinkle bot bubble */
+  --navy-50:  #F0F4FC;   /* chat canvas periwinkle background */
+
+  --orange-600: #C9601C;
+  --orange-500: #E77932; /* primary brand orange */
+  --orange-400: #FF7A00; /* luminous accent orange / glowing swoosh */
+  --orange-100: #FDEBDD; /* soft orange tint */
+  --orange-50:  #FEF5EE;
+
+  --bg: #F0F4FC;
+  --bg-page: #F7F9FD;
+  --surface: #FFFFFF;
+  --text: #111A3A;
+  --text-muted: #5E6682;
+  --text-light: #8E96B2;
+  --border: #DDE4F5;
+  --border-light: #EDF2FC;
+  --success: #10B981;
+  --success-light: #ECFDF5;
+  --error: #EF4444;
+  --error-light: #FEF2F2;
+
+  /* Typography */
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-tagline: 'Playfair Display', Georgia, serif;
+
+  --fs-hero: clamp(2.2rem, 5vw, 3.8rem);
+  --fs-h1: clamp(1.85rem, 3.8vw, 2.8rem);
+  --fs-h2: clamp(1.5rem, 3vw, 2.2rem);
+  --fs-h3: clamp(1.15rem, 2.2vw, 1.5rem);
+  --fs-h4: clamp(1.05rem, 1.8vw, 1.25rem);
+  --fs-body: clamp(0.92rem, 1.1vw, 1.05rem);
+  --fs-small: clamp(0.82rem, 0.95vw, 0.92rem);
+  --fs-xs: 0.78rem;
+
+  /* Spacing and Radius */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(5, 14, 58, 0.06);
+  --shadow-md: 0 12px 32px rgba(5, 14, 58, 0.10);
+  --shadow-lg: 0 24px 64px rgba(5, 14, 58, 0.16);
+  --shadow-orange: 0 8px 24px rgba(255, 122, 0, 0.35);
+  --shadow-card: 0 10px 30px rgba(41, 47, 145, 0.08);
+
+  /* Easing */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-reveal: 600ms;
+
+  --navbar-height: 72px;
+  --content-max: 1220px;
+  --side-padding: clamp(20px, 4vw, 56px);
+}

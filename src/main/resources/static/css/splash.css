@@ -1,0 +1,213 @@
+/* ========================================
+   SPLASH SCREEN STYLES - REFERENCE REPLICA
+   ======================================== */
+
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--navy-950);
+  background-image: 
+    radial-gradient(circle at 50% 25%, rgba(47, 107, 255, 0.28) 0%, transparent 60%),
+    radial-gradient(circle at 50% 85%, rgba(255, 122, 0, 0.15) 0%, transparent 55%),
+    linear-gradient(180deg, #050E3A 0%, #081754 50%, #030824 100%);
+  overflow: hidden;
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  padding: 40px 20px;
+}
+
+.splash.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: translateY(-100%);
+}
+
+/* Ambient stardust particles */
+.splash__dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 80px, #9bb8ff, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 150px 140px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 280px 70px, #ffb066, rgba(0,0,0,0)),
+    radial-gradient(1.5px 1.5px at 320px 220px, #fff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 450px 110px, #9bb8ff, rgba(0,0,0,0)),
+    radial-gradient(2.5px 2.5px at 600px 180px, #fff, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 400px 400px;
+  opacity: 0.5;
+}
+
+/* Top brand block */
+.splash__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 5;
+  margin-top: 4vh;
+}
+
+.splash__logo-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.splash__logo-badge {
+  width: 170px;
+  height: 170px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.45));
+}
+
+.splash__logo-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.splash__tagline {
+  font-family: var(--font-tagline);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: #FFFFFF;
+  margin-top: 24px;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 14px rgba(47, 107, 255, 0.6);
+  opacity: 0.95;
+}
+
+/* Bottom Campus Visual with Glowing Swoosh */
+.splash__bottom {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 5;
+}
+
+.splash__campus-backdrop {
+  width: 100%;
+  height: 220px;
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 -10px 40px rgba(5, 14, 58, 0.8);
+}
+
+.splash__campus-backdrop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 55%;
+  filter: brightness(0.65) saturate(1.2) contrast(1.15) hue-rotate(-10deg);
+}
+
+.splash__campus-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 14, 58, 0.2) 0%, rgba(5, 14, 58, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* Luminous orange swoosh light trail */
+.splash__swoosh {
+  position: absolute;
+  bottom: 80px;
+  left: -20px;
+  right: -20px;
+  height: 90px;
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* Circular Loading Spinner Arc */
+.splash__loader-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  z-index: 10;
+}
+
+.splash__spinner {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 3.5px solid rgba(255, 122, 0, 0.2);
+  border-top-color: #FF7A00;
+  border-right-color: #FFA34D;
+  animation: splashSpin 1s linear infinite;
+  box-shadow: 0 0 16px rgba(255, 122, 0, 0.65);
+}
+
+@keyframes splashSpin {
+  to { transform: rotate(360deg); }
+}
+
+.splash__loader-text {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 12px;
+  letter-spacing: 0.03em;
+  font-weight: 400;
+}
+
+/* Skip Button */
+.splash__skip {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 10000;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-pill);
+  background: rgba(5, 14, 58, 0.65);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+
+.splash__skip:hover {
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 122, 0, 0.4);
+}
+
+@media (max-width: 600px) {
+  .splash__logo-badge {
+    width: 130px;
+    height: 130px;
+  }
+  .splash__tagline {
+    font-size: 1.15rem;
+  }
+  .splash__campus-backdrop {
+    height: 160px;
+  }
+}

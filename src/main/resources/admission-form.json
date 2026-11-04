@@ -1,0 +1,197 @@
+[
+  {
+    "step": 1,
+    "field": "FullName",
+    "question": "May I know your full name?",
+    "control": "text",
+    "required": true,
+    "placeholder": "Enter your full name",
+    "validation": "^[A-Za-z. '\\-]{2,80}$",
+    "errorMessage": "Please enter a valid name (at least 2 letters)."
+  },
+  {
+    "step": 2,
+    "field": "Mobile",
+    "question": "What is your 10-digit mobile number?",
+    "control": "tel",
+    "required": true,
+    "placeholder": "10-digit mobile number (e.g. 9842713789)",
+    "validation": "^[6-9]\\d{9}$",
+    "errorMessage": "Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9."
+  },
+  {
+    "step": 3,
+    "field": "Email",
+    "question": "What is your email address? (Optional)",
+    "control": "email",
+    "required": false,
+    "placeholder": "student@example.com (or tap Skip)",
+    "validation": "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$",
+    "errorMessage": "Please enter a valid email address or tap Skip."
+  },
+  {
+    "step": 4,
+    "field": "District",
+    "question": "Which district or city are you from?",
+    "control": "text",
+    "required": true,
+    "placeholder": "e.g., Salem, Erode, Namakkal, Coimbatore, Chennai",
+    "validation": "^[A-Za-z0-9,./()&' \\-]{2,100}$",
+    "errorMessage": "Please enter your home district or city."
+  },
+  {
+    "step": 5,
+    "field": "Board",
+    "question": "Which board did you study 12th under?",
+    "control": "chips",
+    "required": true,
+    "options": ["State Board", "CBSE", "ICSE", "Other"]
+  },
+  {
+    "step": 6,
+    "field": "Stream",
+    "question": "Which group did you study in 12th standard?",
+    "control": "chips",
+    "required": true,
+    "options": ["Maths-Physics-Chemistry (PCM)", "PCB (Biology)", "Vocational", "Other"]
+  },
+  {
+    "step": 7,
+    "field": "TwelfthPercentage",
+    "question": "What is your overall 12th percentage?",
+    "control": "number",
+    "required": true,
+    "min": 0,
+    "max": 100,
+    "stepValue": 0.01,
+    "placeholder": "e.g., 85.5",
+    "validation": "^(100(\\.0{1,2})?|[0-9]{1,2}(\\.[0-9]{1,2})?%?)$",
+    "errorMessage": "Please enter a valid percentage between 0 and 100."
+  },
+  {
+    "step": 8,
+    "field": "Maths",
+    "question": "Maths marks (out of 100)?",
+    "control": "number",
+    "required": true,
+    "min": 0,
+    "max": 100,
+    "placeholder": "e.g., 90",
+    "validation": "^(100|[0-9]{1,2}(\\.[0-9]{1,2})?)$",
+    "errorMessage": "Please enter a score between 0 and 100."
+  },
+  {
+    "step": 9,
+    "field": "Physics",
+    "question": "Physics marks (out of 100)?",
+    "control": "number",
+    "required": true,
+    "min": 0,
+    "max": 100,
+    "placeholder": "e.g., 85",
+    "validation": "^(100|[0-9]{1,2}(\\.[0-9]{1,2})?)$",
+    "errorMessage": "Please enter a score between 0 and 100."
+  },
+  {
+    "step": 10,
+    "field": "Chemistry",
+    "question": "Chemistry marks (out of 100)?",
+    "control": "number",
+    "required": true,
+    "min": 0,
+    "max": 100,
+    "placeholder": "e.g., 88",
+    "validation": "^(100|[0-9]{1,2}(\\.[0-9]{1,2})?)$",
+    "errorMessage": "Please enter a score between 0 and 100."
+  },
+  {
+    "step": 11,
+    "field": "OfficialCutoff",
+    "question": "Do you already have your official TNEA / counselling cutoff? (Optional)",
+    "control": "number",
+    "required": false,
+    "min": 0,
+    "max": 200,
+    "stepValue": 0.25,
+    "placeholder": "e.g., 185.5 (or tap Skip)",
+    "validation": "^(200(\\.0{1,2})?|[0-1]?[0-9]{1,2}(\\.[0-9]{1,2})?)$",
+    "errorMessage": "Please enter a cutoff score between 0 and 200 or tap Skip."
+  },
+  {
+    "step": 12,
+    "field": "Programme1",
+    "question": "Which engineering programme is your 1st preference?",
+    "control": "chips-select",
+    "required": true,
+    "dynamic": "courses",
+    "options": [
+      "B.E. Computer Science & Engineering",
+      "B.Tech. Artificial Intelligence & Data Science",
+      "B.Tech. Information Technology",
+      "B.E. Electronics & Communication Engineering",
+      "B.E. Mechanical Engineering",
+      "B.E. Civil Engineering",
+      "B.E. Biomedical Engineering",
+      "B.E. Aeronautical Engineering",
+      "Other"
+    ]
+  },
+  {
+    "step": 13,
+    "field": "Programme2",
+    "question": "Do you have a 2nd programme preference? (Optional)",
+    "control": "chips-select",
+    "required": false,
+    "dynamic": "courses",
+    "options": [
+      "B.E. Computer Science & Engineering",
+      "B.Tech. Artificial Intelligence & Data Science",
+      "B.Tech. Information Technology",
+      "B.E. Electronics & Communication Engineering",
+      "B.E. Mechanical Engineering",
+      "B.E. Civil Engineering",
+      "Other"
+    ]
+  },
+  {
+    "step": 14,
+    "field": "AdmissionType",
+    "question": "Which admission quota applies to you? (Optional)",
+    "control": "chips",
+    "required": false,
+    "options": ["Government / TNEA Counselling", "Management Quota", "Lateral Entry", "Sports Quota", "Other"]
+  },
+  {
+    "step": 15,
+    "field": "HostelRequired",
+    "question": "Do you need college hostel accommodation?",
+    "control": "chips",
+    "required": true,
+    "options": ["Yes", "No", "Not sure"]
+  },
+  {
+    "step": 16,
+    "field": "TransportRequired",
+    "question": "Do you need daily college bus transport?",
+    "control": "chips",
+    "required": true,
+    "options": ["Yes", "No", "Not sure"]
+  },
+  {
+    "step": 17,
+    "field": "ContactTime",
+    "question": "What is the best time for our admission team to call you?",
+    "control": "chips",
+    "required": true,
+    "options": ["Morning (9 AM - 12 PM)", "Afternoon (12 PM - 4 PM)", "Evening (4 PM - 7 PM)", "Anytime"]
+  },
+  {
+    "step": 18,
+    "field": "Message",
+    "question": "Anything else you would like to ask or mention? (Optional)",
+    "control": "text",
+    "required": false,
+    "maxLength": 300,
+    "placeholder": "Type your query here or tap Skip"
+  }
+]

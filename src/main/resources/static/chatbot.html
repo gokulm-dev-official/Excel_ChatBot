@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Excel AI Assistant | Excel Engineering College (Autonomous)</title>
+  <meta name="description" content="Official AI Assistant for Excel Engineering College. Ask questions about courses, admissions, departments, facilities and contacts.">
+  <link rel="icon" type="image/jpeg" href="assets/excel-logo.jpg">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+</head>
+<body class="chatbot-page">
+
+  <div class="chatbot-app-container">
+    <div class="chatbot-card">
+      <!-- Chat Header -->
+      <header class="chatbot-header">
+        <div class="chatbot-header__backdrop">
+          <img src="assets/college-campus.jpg" alt="Building Backdrop">
+          <div class="chatbot-header__overlay"></div>
+          <svg class="chatbot-header__swoosh" viewBox="0 0 400 80" fill="none">
+            <path d="M-10,70 Q160,20 420,50" stroke="#FF7A00" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+          </svg>
+        </div>
+
+        <div class="chatbot-header__content">
+          <div class="chatbot-header__brand">
+            <div class="chatbot-header__avatar">
+              <img src="assets/excel-logo.jpg" alt="Excel Crest">
+            </div>
+            <div>
+              <h2 class="chatbot-header__title">Excel AI Assistant</h2>
+              <div class="chatbot-header__status">
+                <span class="chatbot-header__dot"></span>
+                <span>Online &bull; 24/7</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chatbot-header__controls">
+            <button type="button" class="chatbot-header__icon-btn" id="minimizeBtn" title="Minimize" aria-label="Minimize">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </button>
+            <a href="index.html" class="chatbot-header__icon-btn" id="closeBtn" title="Close" aria-label="Close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Admission Form Progress Bar (Hidden during normal chat) -->
+      <div class="form-progress-bar" id="formProgressBar" style="display: none;">
+        <div class="form-progress-bar__info">
+          <span id="formStepLabel">Step 1 of 18</span>
+          <button type="button" class="form-cancel-btn" id="cancelFormBtn">Cancel Form</button>
+        </div>
+        <div class="form-progress-bar__track">
+          <div class="form-progress-bar__fill" id="formProgressFill" style="width: 5%;"></div>
+        </div>
+      </div>
+
+      <!-- Messages Log Canvas -->
+      <main class="chatbot-messages" id="chatbotMessages" role="log" aria-live="polite">
+        <!-- Initial Bot Greeting -->
+        <div class="chat-row chat-row--bot" id="initialBotGreeting">
+          <div class="chat-row__avatar">
+            <img src="assets/robot-mascot.svg" alt="Mascot">
+          </div>
+          <div class="chat-row__bubble chat-row__bubble--bot">
+            <p><strong>Hello! Welcome to Excel Engineering College.</strong></p>
+            <p>I'm your college assistant. How can I help you today?</p>
+            <p style="margin-top: 6px; font-size: 0.88rem; color: #5E6682;">
+              Ask me about courses, admissions, departments, facilities and contact information.
+            </p>
+            <span class="chat-row__time" id="greetingTime">10:24 AM</span>
+          </div>
+        </div>
+
+        <!-- 3+2 Category Cards Grid -->
+        <div class="category-grid" id="categoryGrid">
+          <!-- Row 1 -->
+          <button type="button" class="category-grid__card" data-category="Courses">
+            <div class="category-grid__icon" style="color: #2F6BFF;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 6 3 6 3s3 0 6-3v-5"/></svg>
+            </div>
+            <span class="category-grid__title">Courses</span>
+            <div class="category-grid__arrow">&rarr;</div>
+          </button>
+
+          <button type="button" class="category-grid__card" data-category="Admissions">
+            <div class="category-grid__icon" style="color: #7E22CE;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+            </div>
+            <span class="category-grid__title">Admissions</span>
+            <div class="category-grid__arrow">&rarr;</div>
+          </button>
+
+          <button type="button" class="category-grid__card" data-category="Departments">
+            <div class="category-grid__icon" style="color: #059669;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+            </div>
+            <span class="category-grid__title">Departments</span>
+            <div class="category-grid__arrow">&rarr;</div>
+          </button>
+
+          <!-- Row 2 -->
+          <button type="button" class="category-grid__card category-grid__card--wide" data-category="Facilities">
+            <div class="category-grid__icon" style="color: #0369A1;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 6 4 14"/><path d="M12 6v14"/><path d="M8 8v12"/><path d="M4 4v16"/></svg>
+            </div>
+            <span class="category-grid__title">Facilities</span>
+            <div class="category-grid__arrow">&rarr;</div>
+          </button>
+
+          <button type="button" class="category-grid__card category-grid__card--wide" data-category="Contact Information">
+            <div class="category-grid__icon" style="color: #0D9488;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <span class="category-grid__title">Contact Information</span>
+            <div class="category-grid__arrow">&rarr;</div>
+          </button>
+        </div>
+      </main>
+
+      <!-- Input Footer Bar -->
+      <footer class="chatbot-footer">
+        <button type="button" class="chatbot-footer__attach" title="Attach file or request" aria-label="Attach">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+        </button>
+
+        <input 
+          type="text" 
+          class="chatbot-footer__input" 
+          id="chatInput" 
+          placeholder="Ask another question..." 
+          aria-label="Chat query input" 
+          autocomplete="off">
+
+        <button type="button" class="chatbot-footer__send" id="chatSendBtn" aria-label="Send" disabled>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

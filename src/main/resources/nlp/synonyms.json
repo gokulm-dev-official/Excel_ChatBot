@@ -1,0 +1,19 @@
+{
+  "fees": ["fee", "tuition", "cost", "charges", "payment", "amount", "structure", "fee structure", "expenses", "fees details", "kattanam"],
+  "admission": ["apply", "join", "enrol", "enroll", "enrollment", "seat", "seats", "admission", "admissions", "intake", "counselling", "counseling", "joining", "application", "register", "registration", "admission enquiry", "admission query"],
+  "eligibility": ["qualification", "criteria", "requirement", "requirements", "eligibility", "marks", "cutoff", "cut-off", "percentage", "minimum marks", "eligible", "tnea cutoff"],
+  "course": ["programme", "program", "programmes", "programs", "branch", "branches", "degree", "degrees", "stream", "department course", "courses offered", "be", "btech", "me", "mba", "mca"],
+  "department": ["department", "departments", "dept", "depts", "branch", "engineering stream", "faculty", "hod", "school of"],
+  "hostel": ["accommodation", "stay", "mess", "room", "rooms", "hostel", "hostels", "dormitory", "boarding", "food", "dining", "thangum idam"],
+  "transport": ["bus", "transportation", "vehicle", "vehicles", "bus route", "bus routes", "van", "pickup", "commute", "travel", "perunthu"],
+  "laboratory": ["lab", "labs", "laboratory", "laboratories", "equipment", "workshop", "computer lab", "research facility"],
+  "library": ["central library", "books", "reading room", "journal", "journals", "digital library", "library timings", "noolagam"],
+  "sports": ["gym", "fitness", "ground", "cricket", "football", "basketball", "volleyball", "indoor games", "sports facility", "athletics"],
+  "phone": ["call", "mobile", "number", "phone", "telephone", "helpline", "cell", "contact number", "phone number", "toll free", "enquiry number"],
+  "email": ["mail", "mail id", "email address", "e-mail", "email id", "electronic mail"],
+  "address": ["location", "where", "directions", "map", "place", "how to reach", "campus address", "college location", "sankari", "komarapalayam", "namakkal"],
+  "website": ["site", "url", "link", "web", "portal", "official website", "webpage"],
+  "timings": ["hours", "working hours", "open", "timing", "timings", "office time", "college hours", "working days", "neram"],
+  "document": ["documents", "certificates", "mark sheet", "tc", "transfer certificate", "community certificate", "photos", "records required"]
+}
+
